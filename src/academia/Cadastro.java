@@ -6,6 +6,7 @@
 package academia;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -18,11 +19,18 @@ public class Cadastro {
     public ArrayList<Usuario> getCadastro() {
         return this.userList;
         
+        
+        
+        
+        
+        
+        
+        
     }
     
     
     //Deve ler o cadastro da persitência
-    public Cadastro() {
+    public Cadastro() throws Exception{
         
         
         
@@ -31,6 +39,16 @@ public class Cadastro {
         admin.setSenha("admin");
         admin.setTipo(1);
         userList.add(admin);
+        
+        Ler ler = new Ler();
+        ler.abrir();
+        ler.ler();
+        String texto1 = ler.getTexto();
+        ler.fechar();
+        
+        
+        
+        
         
     }
     
@@ -57,8 +75,8 @@ public class Cadastro {
                 Aluno novo = new Aluno(nome, sobrenome, idade, matricula,dataDeNascimento, cpf, usuario, senha);
                 userList.add(novo);
                 texto = texto + "\n" + nome + "\n" + sobrenome + "\n" + idade + "\n" +
-                        matricula + "\n" + dataDeNascimento + "\n" + cpf + "\n" +
-                        usuario + "\n" + senha;
+                        matricula + "\n" + dataDeNascimento + "\n" + cpf + "\nUsuario=" +
+                        usuario + "\nSenha=" + senha;
                 Gravar gravar = new Gravar();
                 gravar.setTexto(texto);
                 gravar.abrir();
