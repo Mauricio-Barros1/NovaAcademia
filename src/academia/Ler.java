@@ -20,6 +20,7 @@ public class Ler {
     
     private Scanner input;
     private String texto;
+    private String lixo;
 
     public String getTexto() {
         return texto;
@@ -33,22 +34,29 @@ public class Ler {
     public void abrir() throws Exception{
         
         
+        try {        
+        
+            File arqu = new File("/home/user/NetBeansProjects/Academia/src/academia/BD.txt");
+
+            if (!arqu.exists()){
+
+                //arqu.createNewFile();
+
+                //input = new Scanner(new File("/home/user/NetBeansProjects/Academia/src/academia/BD.txt"));
+
+
+            }else{
+
+
+                input = new Scanner(new File("/home/user/NetBeansProjects/Academia/src/academia/BD.txt"));
+
+            }
+        
+        }catch(FileNotFoundException e){
                     
-        File arqu = new File("/home/user/NetBeansProjects/Academia/src/academia/BD.txt");
+                    JOptionPane.showMessageDialog(null, "Erro! Arquivo não encontrado - ler");
                     
-        if (!arqu.exists()){
-                       
-            arqu.createNewFile();
-                    
-            input = new Scanner(new File("/home/user/NetBeansProjects/Academia/src/academia/BD.txt"));
-                    
-                   
-        }else{
-                       
-                       
-            input = new Scanner(new File("/home/user/NetBeansProjects/Academia/src/academia/BD.txt"));
-                       
-        }
+            }
           
             
             
@@ -64,8 +72,8 @@ public class Ler {
         
         while(input.hasNext()){
             
-            if(input.equals("null")) {
-                input.nextLine();
+            if(input.equals("\n")) {
+                lixo = input.nextLine();
             } else {
                 texto = texto + "\n" + input.nextLine();
             }
