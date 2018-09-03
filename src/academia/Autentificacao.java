@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Autentificacao {
     
 
-public Usuario autentica(String usuario, String senha) {
+public Usuario autentica(String usuario, String senha) throws Exception{
     
     Cadastro cadastro = new Cadastro();
     ArrayList<Usuario> lista = cadastro.getCadastro();
@@ -29,6 +29,15 @@ public Usuario autentica(String usuario, String senha) {
         
     }
     return null;
+    
+    /**
+    Ler ler = new Ler();
+    ler.abrir();
+    ler.ler();
+    String texto1 = ler.getTexto();
+    ler.fechar();
+    */
+    //return true;
     
     
 }
