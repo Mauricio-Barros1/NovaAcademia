@@ -24,6 +24,8 @@ public class Cadastro {
     //Deve ler o cadastro da persitência
     public Cadastro() {
         
+        
+        
         Funcionario admin = new Funcionario();
         admin.setUsuario("admin");
         admin.setSenha("admin");

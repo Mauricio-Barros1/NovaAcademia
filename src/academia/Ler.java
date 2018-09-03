@@ -63,9 +63,12 @@ public class Ler {
          
         
         while(input.hasNext()){
-                        
-            texto = texto + "\n" + input.nextLine();
-                
+            
+            if(input.equals("null")) {
+                input.nextLine();
+            } else {
+                texto = texto + "\n" + input.nextLine();
+            }
         }         
         
     }

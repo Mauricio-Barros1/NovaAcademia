@@ -26,8 +26,10 @@ public class Controlador {
         
     }
     
-    public void cadastrarUsuario() {
-        
+    public void cadastrarUsuario(String nome, String sobrenome, int idade, String nascimento, int cpf, String usuario, String senha) throws Exception{
+        Cadastro cadastro = new Cadastro();
+        cadastro.criarUsuario(nome, sobrenome, idade,
+       nascimento, cpf, usuario, senha, 3);
         
     }
     
