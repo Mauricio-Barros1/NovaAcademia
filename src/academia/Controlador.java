@@ -19,7 +19,7 @@ public class Controlador {
         
     }
     
-    public Usuario autenticar(String usuario, String senha) {
+    public Usuario autenticar(String usuario, String senha) throws Exception{
         
         Autentificacao autenti = new Autentificacao();
         return autenti.autentica(usuario, senha);
