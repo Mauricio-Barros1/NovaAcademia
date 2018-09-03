@@ -7,10 +7,7 @@ package academia;
 
 
 
-/**
- *
- * @author user
- */
+
 public class Controlador {
     
     
