@@ -7,6 +7,8 @@ package academia;
 
 
 
+import java.beans.PropertyVetoException;
+import java.io.FileNotFoundException;
 import java.sql.Date;
 
 /**
@@ -18,7 +20,7 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
     /**
      * Creates new form JFrameCadastroUsuario
      */
-    public JFrameCadastroUsuario() throws Exception{
+    public JFrameCadastroUsuario() {
         initComponents();
     }
 
@@ -29,7 +31,7 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() throws Exception{
+    private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -94,8 +96,13 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
 
         jButton2.setText("Confirmar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt){
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            
+                
                 jButton2ActionPerformed(evt);
+                
+               
+                
             }
         }) ;
 
@@ -216,7 +223,7 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                           
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {                                         
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)  {                                         
         String nome = jTextField1.getText();
         String sobrenome = jTextField2.getText();
         int idade = Integer.parseInt(jTextField3.getText());
@@ -231,8 +238,12 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
        nascimento, cpf, usuario, senha, 3);
         */
         
-        Controlador control = new Controlador();
+        /**Controlador control = new Controlador();
         control.cadastrarUsuario(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
+        */
+        Gambiarra gambiarra = new Gambiarra(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
+        //gambiarra.pegarDados(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
+        
         JFrameAdmin tela = new JFrameAdmin();
         tela.open();
         this.dispose();
@@ -276,7 +287,7 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() throws Exception{
+            public void run() {
                 new JFrameCadastroUsuario().setVisible(true);
             }
         });
