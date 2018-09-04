@@ -5,6 +5,8 @@
  */
 package academia;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -21,6 +23,43 @@ public class Gambiarra {
             
         }
     }
+    
+    public Gambiarra(String usuario, String senha) {
+        
+        try{
+            
+            
+            if(this.login(usuario, senha)) {
+                JFrameAdmin tela = new JFrameAdmin();
+                tela.open();
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Erro! Usuário e/ou senha incorretos");
+                JFrameLogin tela = new JFrameLogin();
+                tela.open();
+            }
+        
+        }catch(Exception e) {
+            
+        }
+        
+    }
+    
+    private boolean login(String usuario, String senha) throws Exception {
+        
+        Controlador controlador = new Controlador();
+        
+        try{
+            if(controlador.autenticar(usuario, senha) != null) {
+                return true;
+            }
+        }catch(Exception e) {
+            
+        }
+        return false;
+    }
+    
+    
     
     private void pegarDados(String nome, String sobrenome, int idade, String nascimento, int cpf, 
             String usuario, String senha) throws Exception{
