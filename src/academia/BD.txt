@@ -1,9 +1,0 @@
-null
-Teste
-Testando
-65
-123333
-1954
-123333
-Usuario=Teste
-Senha=senha

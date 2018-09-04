@@ -6,7 +6,10 @@
 package academia;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.io.*;
+import java.util.Arrays;
 
 /**
  *
@@ -14,85 +17,58 @@ import java.util.StringTokenizer;
  */
 public class Cadastro {
     
-    private ArrayList<Usuario> userList = new ArrayList();
-    
-    public ArrayList<Usuario> getCadastro() {
-        return this.userList;
-        
-        
-        
-        
-        
-        
-        
-        
-    }
-    
-    
+    private static BufferedReader usersArq;
+    private static BufferedWriter gravarArq;
+    private static FileOutputStream OutArq;
+    private static String arquivo = "src/academia/dados.txt";
+   
     //Deve ler o cadastro da persitência
-    public Cadastro() throws Exception{
-        
-        
-        
-        Funcionario admin = new Funcionario();
-        admin.setUsuario("admin");
-        admin.setSenha("admin");
-        admin.setTipo(1);
-        userList.add(admin);
-        
-        Ler ler = new Ler();
-        ler.abrir();
-        ler.ler();
-        String texto1 = ler.getTexto();
-        ler.fechar();
-        
-        
-        
-        
-        
-    }
-    
-    public void criarUsuario(String nome, String sobrenome, int idade,
-        String dataDeNascimento, int cpf, String usuario, String senha, int tipo) throws Exception {
-        
-        switch(tipo) {
-            
-            case 1:
-                
-            break;
-            case 2:
-                
-            break;
-            case 3:
-                
-                Ler ler = new Ler();
-                ler.abrir();
-                ler.ler();
-                String texto = ler.getTexto();
-                ler.fechar();
-                
-                int matricula = cpf;
-                Aluno novo = new Aluno(nome, sobrenome, idade, matricula,dataDeNascimento, cpf, usuario, senha);
-                userList.add(novo);
-                texto = texto + "\n" + nome + "\n" + sobrenome + "\n" + idade + "\n" +
-                        matricula + "\n" + dataDeNascimento + "\n" + cpf + "\nUsuario=" +
-                        usuario + "\nSenha=" + senha;
-                Gravar gravar = new Gravar();
-                gravar.setTexto(texto);
-                gravar.abrir();
-                gravar.escrever();
-                gravar.fechar();
-                
-            break;
-            default:
-                
-            break;
-            
-            
+    public Cadastro() {
+        Funcionario admin = new Funcionario("nome",  "sobrenome", 1,
+        1234, "dataDeNascimento", 90909, "admin", "admin", "admin");
+
+        try {
+        usersArq = new BufferedReader(new FileReader(arquivo));
+        FileWriter f = new FileWriter(arquivo, true);
+        gravarArq = new BufferedWriter(f);
         }
-        
+        catch (IOException e)
+        { System.out.println(e);}
     }
     
-    
-    
+    public static String[] getUserInfo(String usuario)
+    {
+        try{
+        String[] user;
+        String line;
+        while ((line = usersArq.readLine()) != null){
+            System.out.println(line);
+            user = line.split(";");
+            if (user[2].equals(usuario))    
+            {   
+                usersArq.close();
+                return user;
+            }
+        }
+        usersArq.close();
+        return null;
+        }
+        catch(IOException e)
+        {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+
+    public static void salvaUsuario(String nome, String sobrenome, int idade,
+        String dataDeNascimento, int cpf, String usuario,
+        String senha, String cargo) throws Exception {
+        
+        gravarArq.write(nome + ";" + sobrenome + ";" + usuario + ";" 
+                + senha + ";" + cpf + ";" + idade + ";" + dataDeNascimento 
+                + ";" + cargo + ";");
+        gravarArq.newLine();
+        gravarArq.close();
+    }    
 }
