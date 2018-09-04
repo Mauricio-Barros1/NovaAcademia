@@ -14,11 +14,11 @@ import javax.swing.JOptionPane;
 public class Gambiarra {
     
     public Gambiarra(String nome, String sobrenome, int idade, String nascimento, int cpf, 
-            String usuario, String senha){
+            String usuario, String senha, String tipo){
             
         try{
             this.pegarDados(nome, sobrenome, idade,
-            nascimento, cpf, usuario, senha);
+            nascimento, cpf, usuario, senha, tipo);
         }catch(Exception e){
             
         }
@@ -50,7 +50,7 @@ public class Gambiarra {
         Controlador controlador = new Controlador();
         
         try{
-            if(controlador.autenticar(usuario, senha) != null) {
+            if(controlador.AutorizaAutenticacao(usuario, senha)) {
                 return true;
             }
         }catch(Exception e) {
@@ -62,12 +62,12 @@ public class Gambiarra {
     
     
     private void pegarDados(String nome, String sobrenome, int idade, String nascimento, int cpf, 
-            String usuario, String senha) throws Exception{
+            String usuario, String senha, String tipo) throws Exception{
         
         Cadastro cadastro = new Cadastro();
         try{
         cadastro.salvaUsuario(nome, sobrenome, idade,
-       nascimento, cpf, usuario, senha, "aluno");
+       nascimento, cpf, usuario, senha, tipo);
         }catch(Exception e){
             
         }
