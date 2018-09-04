@@ -11,6 +11,21 @@ public class Funcionario extends Usuario
     private float salario; 
     private String senha;
 
+        public Funcionario(String nome, String sobrenome, int idade,
+        int matricula, String dataDeNascimento, int cpf, String usuario, 
+        String senha, String cargo)
+    {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.idade = idade;
+        this.dataDeNascimento = dataDeNascimento; 
+        this.cpf = cpf;
+        this.usuario = usuario;
+        this.senha = senha;
+        this.cargo = cargo;
+    }
+    
     public void setCargo(String cargo){ this.cargo = cargo;}
     public void setSalario(float salario){this.salario = salario;}
     public void setSenha(String senha){this.senha = senha;}

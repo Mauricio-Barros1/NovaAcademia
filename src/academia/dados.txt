@@ -1,0 +1,6 @@
+iluh;uyf;uyfytf;hyfd;654;6;7657ff;aluno;
+jh;jf;kjhg;jytf;765;88;765gvh;aluno;
+kuhg;hgfhg;ghff;jufy;876;9;khb;aluno;
+guyguug;gugug;gugugug;ggugug;888;88;ytytuytyt;aluno;
+nome;sobrenome;usuario;senha;1111;18;18/03/1997;aluno;
+nome;sobrenome;admin;admin;1111;18;18/03/1997;aluno;

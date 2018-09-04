@@ -19,22 +19,19 @@ public class Controlador {
         
     }
     
-    public Usuario autenticar(String usuario, String senha) throws Exception{
+    public boolean AutorizaAutenticacao(String usuario, String senha){
         
-        Autentificacao autenti = new Autentificacao();
-        return autenti.autentica(usuario, senha);
+        Autentificacao autentificador = new Autentificacao();
+        return autentificador.autentifica(usuario, senha);
         
     }
     
     public void cadastrarUsuario(String nome, String sobrenome, int idade, String nascimento, int cpf, String usuario, String senha) throws Exception{
         Cadastro cadastro = new Cadastro();
-        cadastro.criarUsuario(nome, sobrenome, idade,
-       nascimento, cpf, usuario, senha, 3);
+        cadastro.salvaUsuario(nome, sobrenome, idade,
+       nascimento, cpf, usuario, senha, "funcionario");
         
     }
-    
-    
-    
     
     
     

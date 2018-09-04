@@ -27,8 +27,8 @@ public class Gambiarra {
         
         Cadastro cadastro = new Cadastro();
         try{
-        cadastro.criarUsuario(nome, sobrenome, idade,
-       nascimento, cpf, usuario, senha, 3);
+        cadastro.salvaUsuario(nome, sobrenome, idade,
+       nascimento, cpf, usuario, senha, "aluno");
         }catch(Exception e){
             
         }

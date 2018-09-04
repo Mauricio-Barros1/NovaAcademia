@@ -13,36 +13,12 @@ import java.util.ArrayList;
  */
 public class Autentificacao {
     
-
-public Usuario autentica(String usuario, String senha) throws Exception{
+    
+public boolean autentifica(String usuario, String senha){
     
     Cadastro cadastro = new Cadastro();
-    ArrayList<Usuario> lista = cadastro.getCadastro();
-     
-    for(int i = 0; i < lista.size(); i ++) {
-        
-        if(usuario.equals(lista.get(i).getUsuario()) && senha.equals(lista.get(i).getSenha())) {
-            
-            return lista.get(i);
-            
-        }
-        
+    System.out.println(usuario);
+    String[] dados = Cadastro.getUserInfo(usuario);
+    return dados[3].equals(senha);
     }
-    return null;
-    
-    /**
-    Ler ler = new Ler();
-    ler.abrir();
-    ler.ler();
-    String texto1 = ler.getTexto();
-    ler.fechar();
-    */
-    //return true;
-    
-    
-}
-
-
-
-
 }
