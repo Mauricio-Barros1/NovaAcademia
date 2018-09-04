@@ -5,6 +5,8 @@
  */
 package academia;
 
+//import JFrameEscolhaUsuario;
+
 /**
  *
  * @author user
@@ -51,6 +53,11 @@ public class JFrameAdmin extends javax.swing.JFrame {
         jButton2.setText("Cadastrar treino");
 
         jButton3.setText("Listar Usuário");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Listar Funcionários");
 
@@ -103,14 +110,25 @@ public class JFrameAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JFrameCadastroUsuario tela = new JFrameCadastroUsuario();
+        /**JFrameCadastroUsuario tela = new JFrameCadastroUsuario();
+        tela.open();
+        this.dispose();*/
+        
+        JFrameEscolhaUsuario tela = new JFrameEscolhaUsuario();
         tela.open();
         this.dispose();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Controlador controlador = new Controlador();
+        controlador.listarUsuarios();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
