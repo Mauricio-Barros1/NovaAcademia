@@ -234,14 +234,14 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
         String senha = jTextField8.getText();
         
         /**Cadastro cadastro = new Cadastro();
-        cadastro.criarUsuario(nome, sobrenome, idade,
-       nascimento, cpf, usuario, senha, 3);
-        */
+        cadastro.salvaUsuario(nome, sobrenome, idade,
+       nascimento, cpf, usuario, senha, "aluno");*/
+        
         
         /**Controlador control = new Controlador();
         control.cadastrarUsuario(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
         */
-        Gambiarra gambiarra = new Gambiarra(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
+        Gambiarra gambiarra = new Gambiarra(nome, sobrenome, idade, nascimento, cpf, usuario, senha, "aluno");
         //gambiarra.pegarDados(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
         
         JFrameAdmin tela = new JFrameAdmin();
