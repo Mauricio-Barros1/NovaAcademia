@@ -134,7 +134,7 @@ public class JFrameLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Erro! Campo de senha ou usuário em branco.");
         } else {
         
-            Controlador controlador = new Controlador();
+            /**Controlador controlador = new Controlador();
             
             
             if(controlador.autenticar(nome, senha) != null) {
@@ -146,7 +146,19 @@ public class JFrameLogin extends javax.swing.JFrame {
             } else {
                 
                 JOptionPane.showMessageDialog(null, "Erro! Usuário e/ou senha incorretos");
-            }
+            }*/
+            
+            
+            Gambiarra login = new Gambiarra(nome, senha);
+            this.dispose();
+            
+            /**if(login.login(nome, senha)) {
+                JFrameAdmin tela = new JFrameAdmin();
+                tela.open();
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Erro! Usuário e/ou senha incorretos");
+            }*/
             
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
