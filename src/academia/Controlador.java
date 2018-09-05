@@ -53,36 +53,35 @@ public class Controlador {
     }
     
     public void cadastrarUsuario(String nome, String sobrenome, String usuario, 
-        String senha, int cpf, int idade, String dataDeNascimento,   
-        int matricula, String cargo) {
+        String senha, String cpf, int idade, String dataDeNascimento,   
+        int matricula, String cargo, float salario) {
         Cadastro.salvaUsuario(nome, sobrenome, idade, dataDeNascimento, cpf, usuario,
-        senha, cargo);        
+        senha, cargo, salario); 
+        new JFrameAdmin().setVisible(true);
     }
     
     public void cadastrarUsuario(String nome, String sobrenome, String usuario, 
-        String senha, int cpf, int idade, String dataDeNascimento,   
+        String senha, String cpf, int idade, String dataDeNascimento,   
         int matricula) {
         Cadastro.salvaUsuario(nome, sobrenome, idade, dataDeNascimento, cpf, usuario,
         senha);
-        
+        new JFrameAdmin().setVisible(true);
     }
     
-    JFrame getProximaTela()
+    void getProximaTela()
     {
         if (usuarioAtual instanceof Aluno)
-            { return new JFrameEscolhaUsuario();} 
+            { new JFrameEscolhaUsuario().setVisible(true);} 
         if (usuarioAtual.isAdmin())
-        { return new JFrameAdmin();}
+        { new JFrameAdmin().setVisible(true);}
         else 
-        { return new JFrameFuncionario();}
+        { new JFrameFuncionario().setVisible(true, usuarioAtual);}
     }
     
      public boolean login(String usuario, String senha) {
         try{
             if(this.autorizaAutenticacao(usuario, senha)) {
                setUsuarioAtual(usuario);
-               System.out.println(usuarioAtual.getNome());
-               System.out.println(usuarioAtual.getDataNascimento());
                return true;
             } else {
                 JOptionPane.showMessageDialog(null, "Erro! Usuário e/ou senha incorretos");

@@ -7,7 +7,7 @@ package academia;
 
 public class Funcionario extends Usuario
 {
-    private String cargo; 
+    public String cargo; 
     private float salario; 
     private String senha;
 

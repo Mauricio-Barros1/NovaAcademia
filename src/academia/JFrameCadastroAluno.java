@@ -45,13 +45,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        try{
-            MaskFormatter mask = new MaskFormatter("(##)#####-####");
-            jFormattedTextField1 = new javax.swing.JFormattedTextField(mask);
-        }catch(Exception e) {
-
-        }
-        /*
+        try{     MaskFormatter mask = new MaskFormatter("########");     jFormattedTextField1 = new javax.swing.JFormattedTextField(mask); }catch(Exception e) {  } /*
         jFormattedTextField1 = new javax.swing.JFormattedTextField(mask)*///;
         try{
             MaskFormatter mask = new MaskFormatter("##/##/####");
@@ -70,7 +64,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
         /*
         jFormattedTextField3 = new javax.swing.JFormattedTextField()*///;
         try{
-            MaskFormatter mask = new MaskFormatter("###");
+            MaskFormatter mask = new MaskFormatter("##");
             jFormattedTextField4 = new javax.swing.JFormattedTextField(mask);
         }catch(Exception e) {
 
@@ -115,7 +109,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
 
         jLabel6.setText("Data de Nascimento:");
 
-        jLabel7.setText("Telefone:");
+        jLabel7.setText("Matricula:");
 
         jLabel8.setText("Usuario:");
 
@@ -205,9 +199,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
                             .addComponent(jFormattedTextField2))
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel7)
                             .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,15 +280,14 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
         String sobrenome = jTextField2.getText();
         int idade = Integer.parseInt(jFormattedTextField4.getText());
         String nascimento = jFormattedTextField2.getText();
-        int cpf = Integer.parseInt(jFormattedTextField3.getText());
-        int telefone = Integer.parseInt(jFormattedTextField1.getText());
+        String cpf = jFormattedTextField3.getText();
+        int matricula = Integer.parseInt(jFormattedTextField1.getText());
         String usuario = jTextField7.getText();
         String senha = jTextField8.getText();       
-        
         Controlador controlador = new Controlador();
         controlador.cadastrarUsuario(nome, sobrenome, usuario, 
-        senha, cpf, idade, nascimento, telefone);
-        
+        senha, cpf, idade, nascimento, matricula);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

@@ -62,12 +62,12 @@ public class Cadastro {
 
 
     public static void salvaUsuario(String nome, String sobrenome, int idade,
-        String dataDeNascimento, int cpf, String usuario,
-        String senha, String cargo) {
+        String dataDeNascimento, String cpf, String usuario,
+        String senha, String cargo, float salario) {
         try{
         gravarArq.write(nome + ";" + sobrenome + ";" + usuario + ";" 
                 + senha + ";" + cpf + ";" + idade + ";" + dataDeNascimento 
-                + ";" + cargo + ";");
+                + ";" + cargo + ";" + salario + ";");
         gravarArq.newLine();
         }
         catch (IOException e)
@@ -77,12 +77,12 @@ public class Cadastro {
     }    
     
     public static void salvaUsuario(String nome, String sobrenome, int idade,
-        String dataDeNascimento, int cpf, String usuario,
+        String dataDeNascimento, String cpf, String usuario,
         String senha)  {
         try {
         gravarArq.write(nome + ";" + sobrenome + ";" + usuario + ";" 
                 + senha + ";" + cpf + ";" + idade + ";" + dataDeNascimento 
-                + ";" + null + ";");
+                + ";" + null + ";" + null);
         gravarArq.newLine();
         }
         catch (IOException e)
