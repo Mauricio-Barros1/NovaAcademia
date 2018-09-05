@@ -21,13 +21,14 @@ public class Cadastro {
     private static BufferedReader usersArq;
     private static BufferedWriter gravarArq;
     private static FileOutputStream OutArq;
-    private static final String arquivo = "src/academia/dados.txt";
+    private static final String arquivoUsers = "src/academia/dados.txt";
+    private static final String arquivoTreinos = "src/academia/treinos.txt";
    
     //Deve ler o cadastro da persitência
     public Cadastro() {
         try {
-        usersArq = new BufferedReader(new FileReader(arquivo));
-        FileWriter f = new FileWriter(arquivo, true);
+        usersArq = new BufferedReader(new FileReader(arquivoUsers));
+        FileWriter f = new FileWriter(arquivoUsers, true);
         gravarArq = new BufferedWriter(f);
         }
         catch (IOException e)
@@ -39,7 +40,7 @@ public class Cadastro {
     public static String[] getUserInfo(String usuario)
     {
         try{
-        usersArq = new BufferedReader(new FileReader(arquivo));
+        usersArq = new BufferedReader(new FileReader(arquivoUsers));
         String[] user;
         String line;
         while ((line = usersArq.readLine()) != null){
@@ -60,6 +61,23 @@ public class Cadastro {
         }
     }
 
+    public static void salvaTreino(Treino treino)  {
+        try {
+            FileWriter f = new FileWriter(arquivoTreinos, true);
+            BufferedWriter gravaTreino = new BufferedWriter(f);
+        int[] valores = treino.getValores();
+        gravaTreino.write(treino.getAluno().getUsuario() + ";" + valores[0] + ";" + valores[1] + ";" 
+                + valores[2] + ";" + valores[3] + ";" + valores[4] + ";" + valores[5] 
+                + ";");
+        gravaTreino.newLine();
+        }
+        catch (IOException e)
+        {
+            JOptionPane.showMessageDialog(null, "Erro! Falha ao salvar usuário dados" + e);
+        }
+    }
+    
+    
 
     public static void salvaUsuario(String nome, String sobrenome, int idade,
         String dataDeNascimento, String cpf, String usuario,
@@ -72,7 +90,7 @@ public class Cadastro {
         }
         catch (IOException e)
         {
-            JOptionPane.showMessageDialog(null, "Erro! Falha ao salvar usuário dados" + e);
+            JOptionPane.showMessageDialog(null, "Erro! Falha ao salvar dados do usuário" + e);
         }
     }    
     
@@ -87,7 +105,7 @@ public class Cadastro {
         }
         catch (IOException e)
         {
-            JOptionPane.showMessageDialog(null, "Erro! Falha ao salvar usuário dados" + e);
+            JOptionPane.showMessageDialog(null, "Erro! Falha ao salvar dados do usuário" + e);
         }
     }
 }
