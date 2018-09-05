@@ -293,11 +293,9 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
         String usuario = jTextField7.getText();
         String senha = jTextField8.getText();       
         
-        new Controlador(nome, sobrenome, idade, nascimento, cpf, usuario, senha, "aluno");        
-        
-        JFrameAdmin tela = new JFrameAdmin();
-        tela.open();
-        this.dispose();
+        Controlador controlador = new Controlador();
+        controlador.cadastrarUsuario(nome, sobrenome, usuario, 
+        senha, cpf, idade, nascimento, telefone);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
