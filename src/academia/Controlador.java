@@ -19,17 +19,51 @@ import javax.swing.JOptionPane;
 public class Controlador {
     
     
-    public void init() {
+    public Controlador(String nome, String senha) {
         
-        new Cadastro();
-        JFrameLogin tela = new JFrameLogin();
-        tela.open();
+        if(this.AutorizaAutenticacao(nome, senha)) {
+                JFrameAdmin tela = new JFrameAdmin();
+                tela.open();
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Erro! Usuário e/ou senha incorretos");
+                JFrameLogin tela = new JFrameLogin();
+                tela.open();
+            }
         
-       
         
     }
     
-    public boolean AutorizaAutenticacao(String usuario, String senha){
+    public Controlador(String nome, String sobrenome, int idade, String nascimento, int cpf, 
+            String usuario, String senha, String tipo) {
+        
+        try {
+            
+            Cadastro cadastro = new Cadastro();
+            cadastro.salvaUsuario(nome, sobrenome, idade,
+            nascimento, cpf, usuario, senha, tipo);
+            
+        }catch(Exception e) {
+                
+        }
+            
+            
+    }
+    
+    public Controlador() {
+        
+    }
+    
+    
+    public void init() {
+        
+        //new Cadastro();
+        JFrameLogin tela = new JFrameLogin();
+        tela.open();
+               
+    }
+    
+    private boolean AutorizaAutenticacao(String usuario, String senha){
         
         Autentificacao autentificador = new Autentificacao();
         return autentificador.autentifica(usuario, senha);
@@ -79,7 +113,6 @@ public class Controlador {
         }
         
     }
-    
-    
+      
     
 }
