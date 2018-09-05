@@ -20,9 +20,6 @@ public class Academia {
         
         Controlador controlador = new Controlador();
         controlador.init();
-        
-        
-        
     }
     
     

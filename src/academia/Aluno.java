@@ -10,8 +10,9 @@ import java.sql.Date;
 
 public class Aluno extends Usuario{
 
-    public Aluno(String nome, String sobrenome, int idade,
-        int matricula, String dataDeNascimento, int cpf, String usuario, String senha)
+    public Aluno(String nome, String sobrenome, String usuario, 
+        String senha, int cpf, int idade, String dataDeNascimento,   
+        int matricula)
     {
         this.matricula = matricula;
         this.nome = nome;

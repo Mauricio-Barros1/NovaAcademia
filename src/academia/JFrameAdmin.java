@@ -5,7 +5,6 @@
  */
 package academia;
 
-//import JFrameEscolhaUsuario;
 
 /**
  *

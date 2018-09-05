@@ -1,1 +1,2 @@
-nome;sobrenome;admin;admin;1111;18;18/03/1997;aluno;
+nome;sobrenome;admin;admin;1111;18;18/03/1997;98797;admin;
+nome;sobrenome;aluno;aluno;1111;18;18/03/1997;98797;null;

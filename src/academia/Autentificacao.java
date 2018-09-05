@@ -5,8 +5,6 @@
  */
 package academia;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author user
@@ -14,11 +12,27 @@ import java.util.ArrayList;
 public class Autentificacao {
     
     
-public boolean autentifica(String usuario, String senha){
+public static boolean autentifica(String usuario, String senha){
     
     Cadastro cadastro = new Cadastro();
     System.out.println(usuario);
     String[] dados = Cadastro.getUserInfo(usuario);
     return dados[3].equals(senha);
     }
+
+    public static boolean verificaPermissao(Usuario nomeUsuario, String tela)
+    {
+        if (nomeUsuario instanceof Funcionario){
+            if (nomeUsuario.isAdmin())
+            {return true;}
+            if (!tela.equals("cadastro"))
+            {return true;}
+            }
+        else
+        { if (tela.equals("treino"))
+              {return true;}
+        }
+        return false;
+    }
+
 }

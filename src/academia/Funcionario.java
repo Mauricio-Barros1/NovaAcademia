@@ -11,9 +11,9 @@ public class Funcionario extends Usuario
     private float salario; 
     private String senha;
 
-        public Funcionario(String nome, String sobrenome, int idade,
-        int matricula, String dataDeNascimento, int cpf, String usuario, 
-        String senha, String cargo)
+        public Funcionario(String nome, String sobrenome, String usuario, 
+        String senha, int cpf, int idade, String dataDeNascimento,   
+        int matricula, String cargo)
     {
         this.matricula = matricula;
         this.nome = nome;
@@ -33,4 +33,6 @@ public class Funcionario extends Usuario
     public String getCargo(){ return cargo;}
     public String getSenha(){return senha;}
     public float getSalario(){return salario;}
+    public boolean isAdmin() { return this.cargo.equals("admin");}
+    
 }

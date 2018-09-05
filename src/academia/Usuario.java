@@ -63,7 +63,7 @@ public abstract class Usuario
         this.senha = senha;
     }
 
-    public String getNome(){return nome + sobrenome; }
+    public String getNome(){return nome + " " + sobrenome; }
 
     public int getIdade(){return idade;}
 
@@ -79,4 +79,5 @@ public abstract class Usuario
 
     public void setTelefone(int telefone){this.telefone = telefone;}
 
+    public boolean isAdmin() { return false;}
 }

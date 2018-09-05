@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.io.*;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,29 +21,28 @@ public class Cadastro {
     private static BufferedReader usersArq;
     private static BufferedWriter gravarArq;
     private static FileOutputStream OutArq;
-    private static String arquivo = "src/academia/dados.txt";
+    private static final String arquivo = "src/academia/dados.txt";
    
     //Deve ler o cadastro da persitência
     public Cadastro() {
-        Funcionario admin = new Funcionario("nome",  "sobrenome", 1,
-        1234, "dataDeNascimento", 90909, "admin", "admin", "admin");
-
         try {
         usersArq = new BufferedReader(new FileReader(arquivo));
         FileWriter f = new FileWriter(arquivo, true);
         gravarArq = new BufferedWriter(f);
         }
         catch (IOException e)
-        { System.out.println(e);}
+        { System.out.println(e);
+        JOptionPane.showMessageDialog(null, "Erro! Falha ao Encontrar arquivo de dados" + e);
+        }
     }
     
     public static String[] getUserInfo(String usuario)
     {
         try{
+        usersArq = new BufferedReader(new FileReader(arquivo));
         String[] user;
         String line;
         while ((line = usersArq.readLine()) != null){
-            System.out.println(line);
             user = line.split(";");
             if (user[2].equals(usuario))    
             {   
@@ -63,12 +63,31 @@ public class Cadastro {
 
     public static void salvaUsuario(String nome, String sobrenome, int idade,
         String dataDeNascimento, int cpf, String usuario,
-        String senha, String cargo) throws Exception {
-        
+        String senha, String cargo) {
+        try{
         gravarArq.write(nome + ";" + sobrenome + ";" + usuario + ";" 
                 + senha + ";" + cpf + ";" + idade + ";" + dataDeNascimento 
                 + ";" + cargo + ";");
         gravarArq.newLine();
-        gravarArq.close();
+        }
+        catch (IOException e)
+        {
+            JOptionPane.showMessageDialog(null, "Erro! Falha ao salvar usuário dados" + e);
+        }
     }    
+    
+    public static void salvaUsuario(String nome, String sobrenome, int idade,
+        String dataDeNascimento, int cpf, String usuario,
+        String senha)  {
+        try {
+        gravarArq.write(nome + ";" + sobrenome + ";" + usuario + ";" 
+                + senha + ";" + cpf + ";" + idade + ";" + dataDeNascimento 
+                + ";" + null + ";");
+        gravarArq.newLine();
+        }
+        catch (IOException e)
+        {
+            JOptionPane.showMessageDialog(null, "Erro! Falha ao salvar usuário dados" + e);
+        }
+    }
 }

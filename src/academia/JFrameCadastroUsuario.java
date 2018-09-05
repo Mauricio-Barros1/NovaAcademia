@@ -237,11 +237,13 @@ public class JFrameCadastroUsuario extends javax.swing.JFrame {
         cadastro.salvaUsuario(nome, sobrenome, idade,
        nascimento, cpf, usuario, senha, "aluno");*/
         
-        
+        Controlador controlador = new Controlador();
+        controlador.cadastrarUsuario(nome, sobrenome, usuario, 
+        senha, cpf, idade, nascimento, telefone);
         /**Controlador control = new Controlador();
         control.cadastrarUsuario(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
         */
-        Gambiarra gambiarra = new Gambiarra(nome, sobrenome, idade, nascimento, cpf, usuario, senha, "aluno");
+        
         //gambiarra.pegarDados(nome, sobrenome, idade, nascimento, cpf, usuario, senha);
         
         JFrameAdmin tela = new JFrameAdmin();
