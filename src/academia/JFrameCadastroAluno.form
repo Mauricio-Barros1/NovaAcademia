@@ -279,7 +279,7 @@
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField()*///"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="try{&#xa;    MaskFormatter mask = new MaskFormatter(&quot;##&quot;);&#xa;    jFormattedTextField4 = new javax.swing.JFormattedTextField(mask);&#xa;}catch(Exception e) {&#xa;&#xa;}&#xa;/**"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="try{&#xa;    MaskFormatter mask = new MaskFormatter(&quot;###&quot;);&#xa;    jFormattedTextField4 = new javax.swing.JFormattedTextField(mask);&#xa;}catch(Exception e) {&#xa;&#xa;}&#xa;/**"/>
       </AuxValues>
     </Component>
   </SubComponents>

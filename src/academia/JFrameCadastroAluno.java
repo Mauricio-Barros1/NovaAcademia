@@ -64,7 +64,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
         /*
         jFormattedTextField3 = new javax.swing.JFormattedTextField()*///;
         try{
-            MaskFormatter mask = new MaskFormatter("##");
+            MaskFormatter mask = new MaskFormatter("###");
             jFormattedTextField4 = new javax.swing.JFormattedTextField(mask);
         }catch(Exception e) {
 

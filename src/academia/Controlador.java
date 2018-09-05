@@ -28,17 +28,7 @@ public class Controlador {
     
      public void setUsuarioAtual(String nomeUsuario)
     {
-        String[] dados = Cadastro.getUserInfo(nomeUsuario);
-        if (!dados[8].equals("null"))
-        {
-           usuarioAtual = new Funcionario(dados[0], dados[1], dados[2], dados[3],
-                   Integer.parseInt(dados[4]), Integer.parseInt(dados[5]), 
-                   dados[6], Integer.parseInt(dados[7]), dados[8]);
-        }
-        else{ 
-            usuarioAtual = new Aluno(dados[0], dados[1], dados[2], dados[3],
-                   Integer.parseInt(dados[4]), Integer.parseInt(dados[5]), 
-                   dados[6], Integer.parseInt(dados[7]));}
+        usuarioAtual = getUsuario(nomeUsuario);
     }
     
      
@@ -91,6 +81,48 @@ public class Controlador {
         }catch(Exception e) {
             return false;
         }
+    }
+     
+   public Usuario getUsuario(String nomeUsuario)
+   {
+      String[] dados = Cadastro.getUserInfo(nomeUsuario);
+        if (!dados[8].equals("null"))
+        {
+           return new Funcionario(dados[0], dados[1], dados[2], dados[3],
+                   Integer.parseInt(dados[4]), Integer.parseInt(dados[5]), 
+                   dados[6], Integer.parseInt(dados[7]), dados[8]);
+        }
+        else{ 
+            return new Aluno(dados[0], dados[1], dados[2], dados[3],
+                   Integer.parseInt(dados[4]), Integer.parseInt(dados[5]), 
+                   dados[6], Integer.parseInt(dados[7]));}
+   }
+     
+   public Aluno getAluno(String nomeUsuario)
+   {
+       String[] dados = Cadastro.getUserInfo(nomeUsuario);
+       return new Aluno(dados[0], dados[1], dados[2], dados[3],
+                   Integer.parseInt(dados[4]), Integer.parseInt(dados[5]), 
+                   dados[6], Integer.parseInt(dados[7]));
+   }
+   
+    public Funcionario getFuncionario(String nomeUsuario)
+    {
+      String[] dados = Cadastro.getUserInfo(nomeUsuario);
+      return new Funcionario(dados[0], dados[1], dados[2], dados[3],
+                   Integer.parseInt(dados[4]), Integer.parseInt(dados[5]), 
+                   dados[6], Integer.parseInt(dados[7]), dados[8]);
+    }
+   
+   
+    public void salvaTreino(String aluno, int abdominais, int polichinelos, int agachamentos,
+            int esteira, int corrida, int eliptico)
+    {
+        Aluno realAluno = getAluno(aluno);
+        Treino treinoASalvar = new Treino(realAluno, abdominais, polichinelos, agachamentos,
+            esteira, corrida, eliptico);
+        Cadastro.salvaTreino(treinoASalvar);
+        new JFrameFuncionario().setVisible(true, usuarioAtual);
     }
      
    
