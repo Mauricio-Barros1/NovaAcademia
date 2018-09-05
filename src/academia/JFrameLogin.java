@@ -163,7 +163,8 @@ public class JFrameLogin extends javax.swing.JFrame {
             }*/
             
             
-            Gambiarra login = new Gambiarra(nome, senha);
+            //new Gambiarra(nome, senha);
+            new Controlador(nome, senha);
             this.dispose();
             
             /**if(login.login(nome, senha)) {
