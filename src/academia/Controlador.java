@@ -126,40 +126,110 @@ public class Controlador {
     }
      
    
-    public void listarUsuarios() {
+    public String listarUsuarios(int quem) {
         
         BufferedReader usersArq;
         String arquivo = "src/academia/dados.txt";       
         
-        try{
+        switch(quem) {
             
-            usersArq = new BufferedReader(new FileReader(arquivo));
+            case 1:
+                try{
+
+                    usersArq = new BufferedReader(new FileReader(arquivo));
+                    String[] user;
+                    String line;
+                    String texto = "";
+
+                    while ((line = usersArq.readLine()) != null){
+                        System.out.println(line);
+                        user = line.split(";");
+
+                        texto = texto + "\n" + "Nome: " + user[0] + " " + user[1] +
+                                "\nMatrícula " + user[4] + "\nIdade: " + user[5] +
+                                        "\nVínculo: " + user[7] + "\n\n";
+
+                    }
+                    
+                    usersArq.close();
+                    return texto;
+
+                }
+                catch(IOException e) {
+                    System.out.println(e);
+
+                }
             
-            String[] user;
-            String line;
-            String texto = "";
+            break;
             
-            
-            while ((line = usersArq.readLine()) != null){
-                System.out.println(line);
-                user = line.split(";");
+            case 2:
                 
-                texto = texto + "\n" + "Nome: " + user[0] + " " + user[1] +
-                        "\nMatrícula " + user[4] + "\nIdade: " + user[5] +
-                                "\nVínculo: " + user[7] + "\n\n";
+                try{
+
+                    usersArq = new BufferedReader(new FileReader(arquivo));
+                    String[] user;
+                    String line;
+                    String texto = "";
+
+                    while ((line = usersArq.readLine()) != null){
+                        System.out.println(line);
+                        user = line.split(";");
+                        
+                        if(user[7].equals("null")) {
+                        texto = texto + "\n" + "Nome: " + user[0] + " " + user[1] +
+                                "\nMatrícula " + user[4] + "\nIdade: " + user[5] +
+                                        /**"\nVínculo: " + user[7] +*/ "\n\n";
+                        }
+                    }
+
+                    
+                    usersArq.close();
+                    return texto;
+
+                }
+                catch(IOException e) {
+                    System.out.println(e);
+
+                }
+                
+            break;
             
-            }
-            
-            JOptionPane.showMessageDialog(null, texto);
-            //JFrameListaUsuario lista = new JFrameListaUsuario();
-            //lista.open();
-            usersArq.close();
+            case 3:
+                
+                try{
+
+                    usersArq = new BufferedReader(new FileReader(arquivo));
+
+                    String[] user;
+                    String line;
+                    String texto = "";
+
+                    while ((line = usersArq.readLine()) != null){
+                        System.out.println(line);
+                        user = line.split(";");
+                        
+                        if(!user[8].equals("null")) {
+                        texto = texto + "\n" + "Nome: " + user[0] + " " + user[1] +
+                                "\nCargo " + user[7] + "\nIdade: " + user[5] +
+                                        /**"\nVínculo: " + user[7] +*/ "\n\n";
+                        }
+                    }
+
+                    
+                    usersArq.close();
+                    return texto;
+
+                }
+                catch(IOException e) {
+                    System.out.println(e);
+
+                }
+                
+            break;
         
         }
-        catch(IOException e) {
-            System.out.println(e);
-            
-        }
+        
+        return null;
         
     }
       
