@@ -64,7 +64,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
         /*
         jFormattedTextField3 = new javax.swing.JFormattedTextField()*///;
         try{
-            MaskFormatter mask = new MaskFormatter("###");
+            MaskFormatter mask = new MaskFormatter("##");
             jFormattedTextField4 = new javax.swing.JFormattedTextField(mask);
         }catch(Exception e) {
 
@@ -81,7 +81,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
 
         jLabel3.setText("Sobrenome");
 
-        jLabel4.setText("CPF");
+        jLabel4.setText("CPF:");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +201,7 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -283,7 +283,8 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
         String cpf = jFormattedTextField3.getText();
         int matricula = Integer.parseInt(jFormattedTextField1.getText());
         String usuario = jTextField7.getText();
-        String senha = jTextField8.getText();       
+        String senha = jTextField8.getText(); 
+        
         Controlador controlador = new Controlador();
         controlador.cadastrarUsuario(nome, sobrenome, usuario, 
         senha, cpf, idade, nascimento, matricula);
@@ -315,7 +316,8 @@ public class JFrameCadastroAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_jFormattedTextField4KeyTyped
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-        String caracteres="zxcvbnmasdfghjklçqwertyuiop ";
+        String caracteres="ZXCVBNMASDFGHJKLÇQWERTYUIOPáéíóúãâêôzxcvbnmasdfghjklçqwertyuiop ";
+       
         if(!caracteres.contains(evt.getKeyChar()+"")){
         evt.consume();}
     }//GEN-LAST:event_jTextField1KeyTyped
