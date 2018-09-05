@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 nome;sobrenome;admin;admin;1111;18;18/03/1997;98797;admin;
 nome;sobrenome;aluno;aluno;1111;18;18/03/1997;98797;null;
+=======
+nome;sobrenome;admin;admin;1111;18;18/03/1997;aluno;mmm;aaa;m;m;888;7;12/12/1912;aluno;
+mmmm;aaaaa;mmmm;mmmm;88888;8;08/08/2018;aluno;
+aaa;aa;mm;uuu;88;99;09/08/1999;aluno;
+mmm;mmm;mmm;mmm;8888;88;098989;aluno;
+>>>>>>> de7ca2eadb7edcf52e151da92ef3c0feda39f088

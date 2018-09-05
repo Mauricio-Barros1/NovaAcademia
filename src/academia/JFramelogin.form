@@ -103,7 +103,16 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+<<<<<<< HEAD:src/academia/JFramelogin.form
         <Property name="text" type="java.lang.String" value="OK"/>
+=======
+        <Property name="text" type="java.lang.String" value="Esqueci minha senha"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder/>
+          </Border>
+        </Property>
+>>>>>>> de7ca2eadb7edcf52e151da92ef3c0feda39f088:src/academia/JFrameLogin.form
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
