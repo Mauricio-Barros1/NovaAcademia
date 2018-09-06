@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academia;
+package academia.Controle;
 
+import academia.Controle.Controlador;
 import javax.swing.JOptionPane;
 
 /**

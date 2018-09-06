@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academia;
+package academia.Model;
+
+import academia.Model.Usuario;
 
 public class Funcionario extends Usuario
 {
-    private String cargo; 
+    public String cargo; 
     private float salario; 
     private String senha;
 
         public Funcionario(String nome, String sobrenome, String usuario, 
-        String senha, int cpf, int idade, String dataDeNascimento,   
-        int matricula, String cargo)
+        String senha, String cpf, int idade, String dataDeNascimento,   
+        int matricula, String cargo, float salario)
     {
         this.matricula = matricula;
         this.nome = nome;
@@ -22,6 +24,7 @@ public class Funcionario extends Usuario
         this.dataDeNascimento = dataDeNascimento; 
         this.cpf = cpf;
         this.usuario = usuario;
+        this.salario = salario;
         this.senha = senha;
         this.cargo = cargo;
     }

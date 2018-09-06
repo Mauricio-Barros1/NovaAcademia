@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academia;
+package academia.Model;
 
 import java.sql.Date;
 
@@ -15,7 +15,7 @@ public abstract class Usuario
     int idade; 
     String dataDeNascimento;
     int RG;
-    int cpf;
+    String cpf;
     int cep;
     int telefone;    
     int matricula;
@@ -51,7 +51,7 @@ public abstract class Usuario
     public Usuario(){}
 
     public Usuario(String nome, String sobrenome, int idade,
-        int matricula, String dataDeNascimento, int cpf, String usuario, String senha)
+        int matricula, String dataDeNascimento, String cpf, String usuario, String senha)
     {
         this.matricula = matricula;
         this.nome = nome;

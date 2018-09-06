@@ -202,7 +202,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Telefone:"/>
+        <Property name="text" type="java.lang.String" value="Matricula:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -252,7 +252,7 @@
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(mask)*///"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="try{&#xa;    MaskFormatter mask = new MaskFormatter(&quot;(##)#####-####&quot;);&#xa;    jFormattedTextField1 = new javax.swing.JFormattedTextField(mask);&#xa;}catch(Exception e) {&#xa;&#xa;}&#xa;/*"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="try{     MaskFormatter mask = new MaskFormatter(&quot;########&quot;);     jFormattedTextField1 = new javax.swing.JFormattedTextField(mask); }catch(Exception e) {  } /*"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">

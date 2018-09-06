@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package academia;
+package academia.Autenticador;
+
+import academia.GerenciadorUsuarios.Cadastro;
+import academia.Model.Funcionario;
+import academia.Model.Usuario;
 
 /**
  *
@@ -15,7 +19,6 @@ public class Autentificacao {
 public static boolean autentifica(String usuario, String senha){
     
     Cadastro cadastro = new Cadastro();
-    System.out.println(usuario);
     String[] dados = Cadastro.getUserInfo(usuario);
     return dados[3].equals(senha);
     }
